@@ -4,35 +4,36 @@
    ======================================================================== */
 
 :root {
-  /* ========== PRIMARY COLOR PALETTE ========== */
-  /* Warm, elegant, timeless palette avoiding blue-heavy corporate templates */
-  --primary-bg:      #FAF8F4;  /* Warm cream base */
-  --secondary-bg:    #F2EFE8;  /* Alternate light background */
-  --text-primary:    #163832;  /* Deep green-black */
-  --text-secondary:  #5C6B66;  /* Muted sage */
-  --accent-primary:  #0E5B47;  /* Premium emerald */
-  --accent-hover:    #14785F;  /* Hover emerald */
-  --accent-gold:     #C8A34D;  /* Premium gold accent */
-  --border-color:    #E4DED2;  /* Soft borders */
-  --card-bg:         #FFFFFF;  /* Pure white cards */
-  --success:         #2F855A;  /* Success green */
-  --error:           #C53030;  /* Error red */
+  /* ========== REFINED COLOR PALETTE ========== */
+  /* Deep, elegant, sophisticated palette with antique gold accents */
+  --primary-color:   #123524;  /* Deep Forest Green */
+  --secondary-color: #1F5E49;  /* Emerald Green */
+  --accent-color:    #C9A227;  /* Antique Gold */
+  --primary-bg:      #FAF8F2;  /* Warm Ivory */
+  --surface-bg:      #FFFFFF;  /* Pure White */
+  --heading-color:   #1A1A1A;  /* Charcoal Black */
+  --text-color:      #555555;  /* Slate Gray */
+  --border-color:    #E8E5DD;  /* Soft Gray */
 
   /* Semantic aliases for clarity */
   --cream:           var(--primary-bg);
-  --sand:            var(--secondary-bg);
-  --ink:             var(--text-primary);
-  --ink-soft:        var(--accent-primary);
-  --ink-tint:        #EDF4F1;
-  --gold:            var(--accent-gold);
-  --gold-soft:       #EADDB9;
-  --kumkum:          var(--accent-primary);
-  --maroon-soft:     #EAF3EF;
-  --saffron:         var(--accent-gold);
-  --paper:           var(--card-bg);
+  --sand:            #F5F2EB;
+  --ink:             var(--primary-color);
+  --ink-soft:        var(--secondary-color);
+  --ink-tint:        #EEF5F2;
+  --gold:            var(--accent-color);
+  --gold-soft:       #E8DCC4;
+  --kumkum:          var(--secondary-color);
+  --maroon-soft:     #EEF5F2;
+  --saffron:         var(--accent-color);
+  --paper:           var(--surface-bg);
   --line:            var(--border-color);
-  --text-body:       var(--text-primary);
-  --text-muted:      var(--text-secondary);
+  --text-body:       var(--text-color);
+  --text-muted:      #777777;
+
+  /* Success & Error */
+  --success:         #2F855A;
+  --error:           #C53030;
 
   /* ========== TYPOGRAPHY ========== */
   /* Heading: Playfair Display • Body: Inter */
@@ -68,9 +69,9 @@
 
   /* ========== SHADOWS - SOFT ONLY ========== */
   /* No harsh borders, soft shadows exclusively */
-  --shadow-soft:     0 24px 70px -34px rgba(22, 56, 50, 0.38);
-  --shadow-tight:    0 14px 34px -24px rgba(22, 56, 50, 0.24);
-  --shadow-subtle:   0 8px 20px rgba(22, 56, 50, 0.08);
+  --shadow-soft:     0 24px 70px -34px rgba(18, 53, 36, 0.25);
+  --shadow-tight:    0 14px 34px -24px rgba(18, 53, 36, 0.18);
+  --shadow-subtle:   0 8px 20px rgba(18, 53, 36, 0.08);
 
   /* ========== MOTION ========== */
   --transition:      0.35s cubic-bezier(0.22, 1, 0.36, 1);  /* Linear smoothness */
@@ -90,7 +91,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
-  color: var(--text-primary);
+  color: var(--text-color);
   background: var(--primary-bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -124,7 +125,7 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  color: var(--text-primary);
+  color: var(--heading-color);
   margin: 0;
   line-height: 1.1;
   font-weight: 700;
@@ -141,7 +142,7 @@ input, textarea, select {
 
 /* ========== FOCUS VISIBLE ========== */
 :focus-visible {
-  outline: 3px solid var(--accent-gold);
+  outline: 3px solid var(--accent-color);
   outline-offset: 3px;
 }
 
@@ -163,17 +164,21 @@ section {
 }
 
 .bg-sand {
-  background: var(--secondary-bg);
+  background: var(--sand);
 }
 
 .bg-ink {
-  background: var(--text-primary);
+  background: var(--primary-color);
   color: #DCE7E3;
 }
 
 .bg-ink h2,
 .bg-ink h3 {
-  color: var(--paper);
+  color: var(--surface-bg);
+}
+
+.bg-ink h1, .bg-ink h4, .bg-ink h5, .bg-ink h6 {
+  color: var(--surface-bg);
 }
 
 /* ========== TYPOGRAPHY UTILITIES ========== */
@@ -186,7 +191,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-primary);
+  color: var(--secondary-color);
   margin-bottom: var(--space-sm);
 }
 
@@ -194,7 +199,7 @@ section {
   content: "";
   width: 22px;
   height: 2px;
-  background: var(--accent-gold);
+  background: var(--accent-color);
   display: inline-block;
 }
 
@@ -211,10 +216,11 @@ section {
 .section-head h2 {
   font-size: var(--fs-h1);
   margin-bottom: var(--space-md);
+  color: var(--heading-color);
 }
 
 .section-head p {
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-top: var(--space-sm);
   font-size: var(--fs-body);
   max-width: 600px;
@@ -248,58 +254,58 @@ section {
   height: 16px;
 }
 
-/* Primary Button - Premium emerald */
+/* Primary Button - Deep Forest Green */
 .btn-primary {
-  background: var(--accent-primary);
-  color: var(--paper);
+  background: var(--primary-color);
+  color: var(--surface-bg);
   box-shadow: var(--shadow-tight);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
-  background: var(--accent-hover);
+  background: var(--secondary-color);
 }
 
 .btn-primary:active {
   transform: translateY(-1px);
 }
 
-/* Gold Button - Premium accent */
+/* Gold Button - Antique Gold accent */
 .btn-gold {
-  background: var(--accent-gold);
-  color: var(--text-primary);
-  box-shadow: 0 12px 30px -12px rgba(200, 163, 77, 0.4);
+  background: var(--accent-color);
+  color: var(--primary-color);
+  box-shadow: 0 12px 30px -12px rgba(201, 162, 39, 0.3);
 }
 
 .btn-gold:hover {
   transform: translateY(-3px);
-  background: #C67F1F;
+  background: #B59220;
 }
 
 /* Outline Button */
 .btn-outline {
   background: rgba(255, 255, 255, 0.6);
-  border-color: var(--text-primary);
-  color: var(--text-primary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .btn-outline:hover {
-  background: var(--text-primary);
-  color: var(--paper);
-  border-color: var(--text-primary);
+  background: var(--primary-color);
+  color: var(--surface-bg);
+  border-color: var(--primary-color);
 }
 
 .bg-ink .btn-outline {
-  border-color: var(--accent-gold);
-  color: var(--paper);
+  border-color: var(--accent-color);
+  color: var(--surface-bg);
   background: rgba(255, 255, 255, 0.1);
 }
 
 .bg-ink .btn-outline:hover {
-  background: var(--accent-gold);
-  color: var(--text-primary);
-  border-color: var(--accent-gold);
+  background: var(--accent-color);
+  color: var(--primary-color);
+  border-color: var(--accent-color);
 }
 
 /* Size variants */
@@ -363,8 +369,8 @@ section {
   position: absolute;
   left: -999px;
   top: 0;
-  background: var(--text-primary);
-  color: var(--paper);
+  background: var(--primary-color);
+  color: var(--surface-bg);
   padding: 1rem 1.4rem;
   z-index: 2000;
   border-radius: 0 0 10px 0;
@@ -461,7 +467,7 @@ section {
 }
 
 .text-muted {
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
 .mt-auto {
@@ -509,4 +515,44 @@ section {
   .grid-cols-4 {
     grid-template-columns: 1fr;
   }
+}
+
+/* ========== CUSTOM COMPONENT STYLES ========== */
+/* Cards with premium styling */
+.card {
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition);
+}
+
+.card:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-tight);
+  transform: translateY(-4px);
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Link hover effect */
+a {
+  position: relative;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
 }
