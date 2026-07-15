@@ -1,0 +1,79 @@
+.placements-section {
+  background: var(--ink);
+  color: rgba(255,255,255,0.76);
+  overflow: hidden;
+}
+.placements-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 12%, rgba(200,163,77,0.16), transparent 34%);
+  pointer-events: none;
+}
+.placements-section .container { position: relative; z-index: 1; }
+.placements-section .eyebrow { color: var(--gold-soft); }
+.placements-section h2,
+.placements-section h3 { color: var(--paper); }
+.placements-section .section-head p { color: rgba(255,255,255,0.66); }
+.placement-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1.4rem;
+  align-items: stretch;
+}
+.placement-stat-panel,
+.placement-card {
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(18px);
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 90px -58px rgba(0,0,0,0.8);
+}
+.placement-stat-panel {
+  padding: clamp(2rem, 4vw, 3.4rem);
+}
+.placement-stat-panel span {
+  display: block;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.placement-stat-panel strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--gold-soft);
+  font-size: clamp(4rem, 9vw, 7rem);
+  line-height: 0.95;
+  margin: 1.2rem 0;
+}
+.placement-stat-panel p { max-width: 36ch; color: rgba(255,255,255,0.72); font-size: 18px; }
+.placement-cards { display: grid; gap: 1rem; }
+.placement-card { padding: 1.6rem; }
+.placement-card h3 { font-size: 24px; margin-bottom: 0.55rem; }
+.placement-card p { color: rgba(255,255,255,0.68); font-size: 1rem; }
+.recruiter-strip {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+.recruiter-strip span {
+  display: grid;
+  place-items: center;
+  min-height: 82px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.72);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 1080px) {
+  .placement-layout { grid-template-columns: 1fr; }
+  .recruiter-strip { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .recruiter-strip { grid-template-columns: repeat(2, 1fr); }
+}

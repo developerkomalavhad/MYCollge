@@ -1,0 +1,27 @@
+.trust-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.15rem;
+  overflow: hidden;
+  background: var(--paper);
+}
+.trust-track {
+  display: flex;
+  gap: 3.5rem;
+  width: max-content;
+  animation: scrollTrack 28s linear infinite;
+}
+@keyframes scrollTrack {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.trust-track span {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.trust-track span::before { content: "*"; color: var(--gold); }
